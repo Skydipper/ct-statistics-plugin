@@ -9,7 +9,7 @@ function init() {
 }
 
 function middleware(app, plugin, generalConfig) {
-    mongoose.connect(`${generalConfig.mongoUri}/stadistics`);
+    mongoose.createConnection(`${generalConfig.mongoUri}/stadistics`);
     debug('Loading stadistics-plugin');
     app.use(StadisticService.middleware);
     app.use(StadisticRouter.middleware());
