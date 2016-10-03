@@ -1,17 +1,21 @@
 {
   "name": "ct-stadistics-plugin",
-  "version": "1.0.2",
+  "version": "1.1.4",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "updatedb": "node node_modules/geoip-lite/scripts/updatedb.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "app-module-path": "^2.0.0",
     "bluebird": "^3.4.1",
+    "cron": "^1.1.0",
     "debug": "^2.2.0",
+    "geoip-lite": "^1.1.8",
     "koa-router": "^7.0.1",
     "mongoose": "^4.5.3"
   },
