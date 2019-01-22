@@ -1,17 +1,17 @@
 require('app-module-path').addPath(__dirname);
 const CronJob = require('cron').CronJob;
 const mongoose = require('mongoose');
-const debug = require('debug')('stadistics-plugin');
-const StadisticService = require('./lib/stadistic.service');
+const debug = require('debug')('statistics-plugin');
+const StatisticService = require('./lib/statistic.service');
 
 module.exports = function cron(plugin, generalConfig) {
-    debug('Loading stadistics cron');
+    debug('Loading statistics cron');
     const connection = mongoose.createConnection(`${generalConfig.mongoUri}`);
-    const stadisticService = new StadisticService(connection);
+    const statisticService = new StatisticService(connection);
     async function tick() {
         try {
-            debug('Executing tick in stadistics microservice');
-            await stadisticService.completeGeoInfo();
+            debug('Executing tick in statistics microservice');
+            await statisticService.completeGeoInfo();
         } catch (error) {
             debug('Error: ', error);
         }
