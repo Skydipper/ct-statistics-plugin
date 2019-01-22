@@ -1,1 +1,1 @@
-# Stadistics plugin to Control tower api-gateway
+# Statistics plugin to Control tower api-gateway

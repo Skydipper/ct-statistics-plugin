@@ -1,8 +1,8 @@
 require('app-module-path').addPath(__dirname);
-const debug = require('debug')('stadistics-plugin');
+const debug = require('debug')('statistics-plugin');
 const mongoose = require('mongoose');
-const stadisticService = require('./lib/stadistic.service');
-const stadisticRouter = require('./lib/stadistic.router');
+const statisticService = require('./lib/statistic.service');
+const statisticRouter = require('./lib/statistic.router');
 
 function init() {
 
@@ -10,9 +10,9 @@ function init() {
 
 function middleware(app, plugin, generalConfig) {
     const connection = mongoose.createConnection(`${generalConfig.mongoUri}`);
-    debug('Loading stadistics-plugin');
-    app.use(stadisticService(connection).middleware);
-    app.use(stadisticRouter(connection).middleware());
+    debug('Loading statistics-plugin');
+    app.use(statisticService(connection).middleware);
+    app.use(statisticRouter(connection).middleware());
 }
 
 
